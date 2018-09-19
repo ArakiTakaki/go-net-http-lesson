@@ -6,12 +6,11 @@ import (
 	"log"
 
 	"github.com/ArakiTakaki/go-net-http-lesson/get"
-	"github.com/ArakiTakaki/go-net-http-lesson/server"
 )
 
 func main() {
 	get := get.HttpUtilGet("http://araki.mars.jp/")
-	
+
 	res := get.ResponseObj()
 	green("# Response")
 	fmt.Println("ResponseDetail")
@@ -51,7 +50,7 @@ func main() {
 	// char[] => string に変更し出力を行う。
 	fmt.Println(string(body))
 	fmt.Println("```")
-	server.Start()
+
 }
 
 func green(data string) {
