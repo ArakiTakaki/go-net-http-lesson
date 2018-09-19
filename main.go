@@ -5,7 +5,10 @@ import (
 	"io/ioutil"
 	"log"
 
+	"github.com/ArakiTakaki/go-net-http-lesson/lib"
+
 	"github.com/ArakiTakaki/go-net-http-lesson/get"
+	"github.com/ArakiTakaki/go-net-http-lesson/routes"
 )
 
 func main() {
@@ -50,6 +53,10 @@ func main() {
 	// char[] => string に変更し出力を行う。
 	fmt.Println(string(body))
 	fmt.Println("```")
+
+	router := lib.NewRoute()
+	routes.Routing(router)
+	router.Start(":3000")
 
 }
 
